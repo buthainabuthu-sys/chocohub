@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ChocoHub | Chocolate Paradise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brown: #35180f;
+    --dark: #24100b;
+    --chocolate: #60331f;
+    --cream: #fff5df;
+    --yellow: #ffd75e;
+    --gold: #e9ac32;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+
+.announcement {
+    background: var(--yellow);
+    color: var(--brown);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+
+header {
+    background: var(--dark);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 31px;
+    font-weight: 800;
+    color: var(--yellow);
+    white-space: nowrap;
+}
+
+.logo span {
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-actions a {
+    font-size: 19px;
+}
+
+.cart {
+    background: var(--yellow);
+    color: var(--brown);
+    border-radius: 50px;
+    padding: 9px 14px;
+    font-size: 12px !important;
+    font-weight: 700;
+}
+
+
+
+.btn {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--brown);
+    padding: 14px 25px;
+    border: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+
+
+.hero {
+    min-height: 550px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(35, 14, 7, 0.96),
+            rgba(57, 27, 15, 0.65)
+        ),
+        url('https://images.unsplash.com/photo-1548907040-4d42faa1a9c0?auto=format&fit=crop&w=1800&q=85');
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero::after {
+    content: "🍫";
+    position: absolute;
+    right: 7%;
+    bottom: 5%;
+    font-size: clamp(130px, 23vw, 290px);
+    opacity: 0.8;
+    transform: rotate(-15deg);
+}
+
+.hero-content {
+    max-width: 1250px;
+    width: 100%;
+    margin: auto;
+    padding: 75px 6%;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--yellow);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(43px, 7vw, 83px);
+    line-height: 1.08;
+    max-width: 750px;
+}
+
+.hero h1 span {
+    color: var(--yellow);
+}
+
+.hero p {
+    margin: 22px 0 32px;
+    max-width: 490px;
+    color: #f1dfd0;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--yellow);
+    padding: 25px 5%;
+    gap: 20px;
+    text-align: center;
+}
+
+.benefit {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.benefit span {
+    display: block;
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+
+
+.section {
+    padding: 80px 6%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading small {
+    color: #a96b27;
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 46px);
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #846e61;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+
+.about-section {
+    background: #fff5df;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.about-image {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 15px 15px 0 var(--yellow);
+}
+
+.about-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-label {
+    color: #a96b27;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    margin: 18px 0;
+}
+
+.about-content h2 span {
+    color: #b87525;
+}
+
+.about-content p {
+    color: #806c5e;
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+.about-features {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.about-features div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.about-features strong {
+    font-size: 13px;
+}
+
+.about-features span {
+    font-size: 11px;
+    color: #806c5e;
+}
+
+
+
+.categories {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    height: 265px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--brown);
+    color: white;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(
+        transparent 15%,
+        rgba(25, 9, 4, 0.92)
+    );
+}
+
+.category-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.category-overlay span {
+    color: var(--yellow);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+
+.products-section {
+    background: #fffaf0;
+}
+
+.products-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(58, 28, 12, 0.08);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(58, 28, 12, 0.15);
+}
+
+.product-image {
+    height: 245px;
+    overflow: hidden;
+    position: relative;
+    background: #f2dfc3;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.badge {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    background: var(--yellow);
+    color: var(--brown);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-category {
+    color: #b28a65;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.product-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    margin: 8px 0;
+}
+
+.rating {
+    color: #e5a51e;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.price {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.old-price {
+    color: #a99a8e;
+    text-decoration: line-through;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.add-btn {
+    background: var(--brown);
+    color: white;
+    border: none;
+    padding: 11px 14px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: var(--gold);
+    color: var(--brown);
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 45px;
+}
+
+
+
+.cart-panel {
+    position: fixed;
+    right: -420px;
+    top: 0;
+    width: min(400px, 100%);
+    height: 100vh;
+    background: white;
+    z-index: 300;
+    padding: 25px;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.cart-panel.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.cart-header h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+.close-cart {
+    border: none;
+    background: none;
+    font-size: 27px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.cart-item button {
+    background: none;
+    border: none;
+    color: #a33;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.cart-total {
+    margin-top: 25px;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.cart-checkout {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cart-empty {
+    padding: 30px 0;
+    color: #806c5e;
+    font-size: 13px;
+}
+
+.cart-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 250;
+    background: rgba(0,0,0,0.45);
+}
+
+.cart-backdrop.show {
+    display: block;
+}
+
+
+
+.promo {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37, 15, 8, 0.96),
+            rgba(37, 15, 8, 0.65)
+        ),
+        url('https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=1600&q=85');
+
+    background-position: center;
+    background-size: cover;
+    padding: 85px 6%;
+    color: white;
+}
+
+.promo-content {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.promo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 57px);
+    max-width: 650px;
+    line-height: 1.2;
+}
+
+.promo h2 span {
+    color: var(--yellow);
+}
+
+.promo p {
+    margin: 20px 0 28px;
+    max-width: 470px;
+    color: #ead8ca;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+
+.newsletter {
+    background: var(--yellow);
+    padding: 60px 6%;
+}
+
+.newsletter-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+}
+
+.newsletter p {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.newsletter form {
+    display: flex;
+    background: white;
+    padding: 6px;
+    border-radius: 5px;
+    max-width: 470px;
+    width: 100%;
+}
+
+.newsletter input {
+    border: none;
+    outline: none;
+    padding: 13px;
+    width: 100%;
+    min-width: 0;
+}
+
+.newsletter button {
+    background: var(--brown);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+
+.contact-section {
+    background: #fff5df;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.contact-info {
+    background: var(--brown);
+    color: white;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.contact-info > p {
+    color: #e0c7b7;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-item > span {
+    font-size: 25px;
+}
+
+.contact-item strong {
+    color: var(--yellow);
+    font-size: 13px;
+}
+
+.contact-item p {
+    color: #e0c7b7;
+    font-size: 12px;
+    margin-top: 7px;
+    overflow-wrap: anywhere;
+}
+
+.contact-form {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(58, 28, 12, 0.08);
+}
+
+.contact-form h3 {
+    color: var(--brown);
+}
+
+.contact-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 17px 0 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e7d8c8;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #b87525;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+.contact-form .btn {
+    width: 100%;
+}
+
+
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 60px 6% 25px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 35px;
+}
+
+.footer-brand p {
+    color: #c4a99a;
+    font-size: 12px;
+    line-height: 1.9;
+    max-width: 280px;
+    margin-top: 18px;
+}
+
+.footer-column h3 {
+    color: var(--yellow);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.footer-column a {
+    display: block;
+    color: #c4a99a;
+    font-size: 12px;
+    margin-bottom: 13px;
+}
+
+.footer-column a:hover {
+    color: var(--yellow);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid #513528;
+    color: #9b8173;
+    font-size: 11px;
+    text-align: center;
+}
+
+
+
+@media (max-width: 1000px) {
+    .nav-links {
+        gap: 13px;
+    }
+
+    .categories,
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero-content {
+        padding: 55px 6%;
+    }
+
+    .hero::after {
+        right: 0;
+        bottom: 0;
+        font-size: 130px;
+        opacity: 0.45;
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+        padding: 55px 5%;
+    }
+
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .categories {
+        gap: 12px;
+    }
+
+    .category-card {
+        height: 220px;
+    }
+
+    .category-overlay {
+        padding: 13px;
+    }
+
+    .category-overlay h3 {
+        font-size: 19px;
+    }
+
+    .product-grid {
+        gap: 12px;
+    }
+
+    .product-image {
+        height: 170px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 16px;
+    }
+
+    .price-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+
+    .newsletter-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .newsletter h2 {
+        font-size: 29px;
+    }
+
+    .newsletter form {
+        max-width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 380px) {
+    .categories,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        height: 260px;
+    }
+
+    .product-image {
+        height: 240px;
+    }
+
+    .nav-actions {
+        gap: 9px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter form {
+        flex-wrap: wrap;
+    }
+
+    .newsletter button {
+        width: 100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<div class="announcement">
+     SWEETEN YOUR DAY — DISCOVER YOUR CHOCOHUB FAVOURITES!
+</div>
+
+
+
+<header>
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        Choco<span>Hub</span> 
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#products">PRODUCTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <div class="nav-actions">
+
+        <a href="#products" aria-label="Browse products">⌕</a>
+
+        <a href="#contact" aria-label="Contact us">♙</a>
+
+        <a href="javascript:void(0)"
+           class="cart"
+           onclick="openCart()">
+            🛒 <span id="cart-count">0</span>
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            WELCOME TO CHOCOHUB
+        </div>
+
+        <h1>
+            LIFE IS BETTER<br>
+            WITH <span>CHOCOLATE.</span>
+        </h1>
+
+        <p>
+            Discover a world of irresistible chocolate creations.
+            Delicious chocolates, luxurious flavours and little
+            moments of happiness — all made for chocolate lovers.
+        </p>
+
+        <a href="#products" class="btn">
+            EXPLORE OUR PRODUCTS →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<section class="benefits">
+
+    <div class="benefit">
+        <span></span>
+        Premium Chocolate
+    </div>
+
+    <div class="benefit">
+        <span></span>
+        Perfect for Gifting
+    </div>
+
+    <div class="benefit">
+        <span></span>
+        Delivery Available
+    </div>
+
+    <div class="benefit">
+        <span></span>
+        Made with Love
+    </div>
+
+</section>
+
+
+
+<section class="section about-section" id="about">
+
+    <div class="about-container">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=900&q=85"
+                alt="Delicious chocolate collection">
+
+        </div>
+
+        <div class="about-content">
+
+            <small class="about-label">
+                OUR SWEET STORY
+            </small>
+
+            <h2>
+                Welcome to <span>ChocoHub</span>
+            </h2>
+
+            <p>
+                At ChocoHub, we believe chocolate is more than
+                just a sweet treat. It represents happiness,
+                celebration, love and unforgettable memories.
+            </p>
+
+            <p>
+                Our collection brings together delicious chocolates,
+                cakes, cookies, brownies and other irresistible treats.
+            </p>
+
+            <p>
+                Whether you are celebrating a special occasion
+                or simply treating yourself, ChocoHub is here
+                to make every moment sweeter.
+            </p>
+
+            <div class="about-features">
+
+                <div>
+                    <strong> Premium Treats</strong>
+                    <span>A delightful chocolate experience</span>
+                </div>
+
+                <div>
+                    <strong>Made with Passion</strong>
+                    <span>Created for chocolate lovers</span>
+                </div>
+
+            </div>
+
+            <a href="#products" class="btn">
+                DISCOVER OUR PRODUCTS →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="section" id="categories">
+
+    <div class="section-heading">
+
+        <small>EXPLORE THE SWEETNESS</small>
+
+        <h2>Shop By Category</h2>
+
+        <p>
+            Something delicious for every chocolate craving.
+        </p>
+
+    </div>
+
+    <div class="categories">
+
+        <a href="#products" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1548907040-4d42faa1a9c0?auto=format&fit=crop&w=600&q=80"
+                alt="Assorted chocolates">
+
+            <div class="category-overlay">
+                <h3>Chocolates</h3>
+                <span>DISCOVER MORE →</span>
+            </div>
+
+        </a>
+
+        <a href="#products" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+                alt="Chocolate cake">
+
+            <div class="category-overlay">
+                <h3>Chocolate Cakes</h3>
+                <span>DISCOVER MORE →</span>
+            </div>
+
+        </a>
+
+        <a href="#products" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80"
+                alt="Chocolate cookies">
+
+            <div class="category-overlay">
+                <h3>Cookies</h3>
+                <span>DISCOVER MORE →</span>
+            </div>
+
+        </a>
+
+        <a href="#products" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80"
+                alt="Chocolate milkshake">
+
+            <div class="category-overlay">
+                <h3>Milkshakes</h3>
+                <span>DISCOVER MORE →</span>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<section class="section products-section" id="products">
+
+    <div class="products-container">
+
+        <div class="section-heading">
+
+            <small>MADE TO MAKE YOU SMILE</small>
+
+            <h2>Our Sweetest Picks 🍫</h2>
+
+            <p>
+                Discover our delicious collection of chocolate treats.
+            </p>
+
+        </div>
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1548907040-4d42faa1a9c0?auto=format&fit=crop&w=600&q=80"
+                        alt="Premium chocolate box">
+
+                    <span class="badge">BESTSELLER</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Premium Collection
+                    </span>
+
+                    <h3>Choco Bliss Box</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span style="color:#8c786c">(4.9)</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">
+                            ₹399
+                            <span class="old-price">₹499</span>
+                        </div>
+
+                        <button class="add-btn"
+                            onclick="addToCart('Choco Bliss Box',399)">
+                            + ADD
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 2 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+                        alt="Chocolate cake">
+
+                    <span class="badge">POPULAR</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Bakery Collection
+                    </span>
+
+                    <h3>Chocolate Dream Cake</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span style="color:#8c786c">(4.8)</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">₹599</div>
+
+                        <button class="add-btn"
+                            onclick="addToCart('Chocolate Dream Cake',599)">
+                            + ADD
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 3 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80"
+                        alt="Chocolate chip cookies">
+
+                    <span class="badge">FRESH</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Cookie Collection
+                    </span>
+
+                    <h3>Choco Chip Cookies</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span style="color:#8c786c">(4.7)</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">₹199</div>
+
+                        <button class="add-btn"
+                            onclick="addToCart('Choco Chip Cookies',199)">
+                            + ADD
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 4 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80"
+                        alt="Chocolate milkshake">
+
+                    <span class="badge">FAVOURITE</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Drinks Collection
+                    </span>
+
+                    <h3>Choco Fudge Shake</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span style="color:#8c786c">(4.9)</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">₹149</div>
+
+                        <button class="add-btn"
+                            onclick="addToCart('Choco Fudge Shake',149)">
+                            + ADD
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 5 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=600&q=80"
+                        alt="Chocolate gift box">
+
+                    <span class="badge">GIFT SPECIAL</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Gifting Collection
+                    </span>
+
+                    <h3>Chocolate Love Box</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span style="color:#8c786c">(4.9)</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">₹499</div>
+
+                        <button class="add-btn"
+                            onclick="addToCart('Chocolate Love Box',499)">
+                            + ADD
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 6 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80"
+                        alt="Chocolate brownie">
+
+                    <span class="badge">MUST TRY</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Dessert Collection
+                    </span>
+
+                    <h3>Fudgy Brownies</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span style="color:#8c786c">(4.8)</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">₹249</div>
+
+                        <button class="add-btn"
+                            onclick="addToCart('Fudgy Brownies',249)">
+                            + ADD
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 7 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=600&q=80"
+                        alt="Chocolate truffles">
+
+                    <span class="badge">PREMIUM</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Luxury Collection
+                    </span>
+
+                    <h3>Golden Choco Truffles</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span style="color:#8c786c">(4.9)</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">₹349</div>
+
+                        <button class="add-btn"
+                            onclick="addToCart('Golden Choco Truffles',349)">
+                            + ADD
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUCT 8 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1575377427642-087cf684f29d?auto=format&fit=crop&w=600&q=80"
+                        alt="Chocolate dessert">
+
+                    <span class="badge">NEW</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Special Collection
+                    </span>
+
+                    <h3>Chocolate Treat Box</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span style="color:#8c786c">(4.7)</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">₹299</div>
+
+                        <button class="add-btn"
+                            onclick="addToCart('Chocolate Treat Box',299)">
+                            + ADD
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <div class="view-all">
+            <a href="#categories" class="btn">
+                EXPLORE OUR COLLECTION →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="promo" id="offers">
+
+    <div class="promo-content">
+
+        <div class="eyebrow">
+            A LITTLE EXTRA SWEETNESS
+        </div>
+
+        <h2>
+            Share Happiness.<br>
+            <span>Gift Chocolate.</span>
+        </h2>
+
+        <p>
+            Make every celebration unforgettable with our
+            specially curated chocolate gift boxes.
+            Because the sweetest memories start with ChocoHub.
+        </p>
+
+        <a href="#products" class="btn">
+            SHOP GIFT BOXES →
+        </a>
+
+    </div>
+
+</section>
+
+<section class="newsletter">
+
+    <div class="newsletter-content">
+
+        <div>
+
+            <h2>Stay Sweet! </h2>
+
+            <p>
+                Subscribe for delicious deals, new arrivals
+                and exclusive ChocoHub offers.
+            </p>
+
+        </div>
+
+        <form onsubmit="subscribeNewsletter(event)">
+
+            <input
+                type="email"
+                id="newsletter-email"
+                placeholder="Enter your email address"
+                required>
+
+            <button type="submit">
+                SUBSCRIBE
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<section class="section contact-section" id="contact">
+
+    <div class="section-heading">
+
+        <small>WE WOULD LOVE TO HEAR FROM YOU</small>
+
+        <h2>Let's Talk Chocolate </h2>
+
+        <p>
+            Have a question, need help with an order,
+            or want to send us some sweet feedback?
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <h3>Get in Touch</h3>
+
+            <p>
+                We're here to make your ChocoHub experience
+                as sweet as our chocolates.
+            </p>
+
+            <div class="contact-item">
+
+                <span>📍</span>
+
+                <div>
+                    <strong>Our Location</strong>
+                    <p>Kerala, India</p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <span>✉️</span>
+
+                <div>
+                    <strong>Email Us</strong>
+                    <p>hello@chocohub.com</p>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <span></span>
+
+                <div>
+                    <strong>Our Promise</strong>
+                    <p>Making every chocolate moment special.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CONTACT FORM -->
+
+        <form class="contact-form"
+              onsubmit="sendMessage(event)">
+
+            <h3>Send Us a Message</h3>
+
+            <label for="name">Your Name</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required>
+
+            <label for="email">Email Address</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required>
+
+            <label for="subject">Subject</label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="What is your message about?"
+                required>
+
+            <label for="message">Your Message</label>
+
+            <textarea
+                id="message"
+                rows="5"
+                placeholder="Write your message here..."
+                required></textarea>
+
+            <button type="submit" class="btn">
+                SEND MESSAGE →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo">
+                Choco<span>Hub</span> 
+            </a>
+
+            <p>
+                Your happy place for chocolate!
+                Discover delicious treats, thoughtful gifts
+                and unforgettable chocolate moments.
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>QUICK LINKS</h3>
+
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Our Products</a>
+            <a href="#offers">Special Offers</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>HELP & SUPPORT</h3>
+
+            <a href="#contact">Contact Us</a>
+            <a href="#contact">Shipping Information</a>
+            <a href="#contact">Return Policy</a>
+            <a href="#contact">FAQs</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>GET IN TOUCH</h3>
+
+            <a href="mailto:hello@chocohub.com">
+                ✉ hello@chocohub.com
+            </a>
+
+            <a href="#contact">
+                📍 Kerala, India
+            </a>
+
+            <a href="#contact">
+                📷 Instagram
+            </a>
+
+            <a href="#contact">
+                📘 Facebook
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 ChocoHub. All Rights Reserved.
+        Made with ❤️ and Chocolate.
+
+    </div>
+
+</footer>
+
+
+<div class="cart-backdrop"
+     id="cart-backdrop"
+     onclick="closeCart()">
+</div>
+
+<aside class="cart-panel" id="cart-panel">
+
+    <div class="cart-header">
+
+        <h2>Your Cart 🛒</h2>
+
+        <button class="close-cart"
+                onclick="closeCart()"
+                aria-label="Close cart">
+            &times;
+        </button>
+
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total">
+        Total: ₹<span id="cart-total">0</span>
+    </div>
+
+    <button class="btn cart-checkout"
+            onclick="checkout()">
+        CONTINUE TO CHECKOUT →
+    </button>
+
+</aside>
+
+
+<script>
+
+/* SHOPPING CART */
+
+let cart = [];
+
+function addToCart(productName, price) {
+
+    const existingProduct = cart.find(
+        item => item.name === productName
+    );
+
+    if (existingProduct) {
+        existingProduct.quantity++;
+    } else {
+        cart.push({
+            name: productName,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    updateCart();
+
+    const button = event.currentTarget;
+    const originalText = button.textContent;
+
+    button.textContent = "✓ ADDED";
+
+    setTimeout(() => {
+        button.textContent = originalText;
+    }, 1000);
+}
+
+function updateCart() {
+
+    const count = cart.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
+
+    const total = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    );
+
+    document.getElementById("cart-count").textContent = count;
+
+    document.getElementById("cart-total").textContent =
+        total.toLocaleString("en-IN");
+
+    const cartItems = document.getElementById("cart-items");
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            '<p class="cart-empty">Your cart is empty. Add some delicious chocolates! 🍫</p>';
+
+        return;
+    }
+
+    cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+            <div>
+                <strong>${item.name}</strong>
+                <p>₹${item.price} × ${item.quantity}</p>
+                <button onclick="removeFromCart(${index})">
+                    Remove
+                </button>
+            </div>
+
+            <strong>
+                ₹${(item.price * item.quantity).toLocaleString("en-IN")}
+            </strong>
+        </div>
+    `).join("");
+}
+
+function removeFromCart(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+}
+
+function openCart() {
+
+    updateCart();
+
+    document.getElementById("cart-panel").classList.add("open");
+
+    document.getElementById("cart-backdrop").classList.add("show");
+}
+
+function closeCart() {
+
+    document.getElementById("cart-panel").classList.remove("open");
+
+    document.getElementById("cart-backdrop").classList.remove("show");
+}
+
+function checkout() {
+
+    if (cart.length === 0) {
+        alert("Your cart is empty! Please add some chocolates first.");
+        return;
+    }
+
+    alert(
+        "Thank you for shopping with ChocoHub! \n\n" +
+        "Your cart total is ₹" +
+        cart.reduce((sum, item) =>
+            sum + item.price * item.quantity, 0
+        ) +
+        ".\n\nOnline payment and order processing must be connected before checkout can be completed."
+    );
+}
+
+/* CONTACT FORM */
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    alert(
+        "Thank you, " + name + "! \n\n" +
+        "Your message form was submitted.\n" +
+        "To receive messages, connect this form to a backend or form service."
+    );
+
+    event.target.reset();
+}
+
+/* NEWSLETTER */
+
+function subscribeNewsletter(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Thank you for subscribing to ChocoHub! \n\n" +
+        "You'll be part of our sweet community."
+    );
+
+    event.target.reset();
+}
+
+/* INITIALIZE CART */
+
+updateCart();
+
+</script>
+
+</body>
+</html>
